@@ -14,8 +14,6 @@ require _SETTINGS['paths']['root'] .'/vendor/autoload.php';
 require_once(_SETTINGS['paths']['root']."/vendor/botnyx/sfe-shared-core/src/includes/dependencies.php");
 
 
-var_dump( class_exists("Botnyx\\Sfe\\Shared\\Application"));
-die();
 
 
 /* Create the Sfe instance with settings. */
@@ -28,6 +26,10 @@ $app = $sfe->start();
 
 /* Setup the container  */
 $container = $app->getContainer();
+
+var_dump( class_exists("Botnyx\\Sfe\\Shared\\Application"));
+die();
+
 
 
 
