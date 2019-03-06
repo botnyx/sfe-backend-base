@@ -1,13 +1,6 @@
 <?php 
 /* 
-	Parse Config with sections 
-	
-	by default, configs are loaded by hostname
-	
-	Example: 
-		testsite-com.conf.ini
-		my-testsite-com.conf.ini
-
+	Load the Configuration 
 */
 
 if( !file_exists( "../configuration.ini" ) ){
@@ -50,6 +43,9 @@ use Kevinrob\GuzzleCache\Storage\DoctrineCacheStorage;
 use Kevinrob\GuzzleCache\KeyValueHttpHeader;
 use Kevinrob\GuzzleCache\Strategy\GreedyCacheStrategy;
 
+#use \Psr\Http\Message\ServerRequestInterface as Request;
+#use \Psr\Http\Message\ResponseInterface as Response;
+
 
 
 /*
@@ -61,15 +57,13 @@ require_once(_SETTINGS['paths']['root']."/vendor/botnyx/sfe-shared-core/src/incl
 
 
 
-#use \Psr\Http\Message\ServerRequestInterface as Request;
-#use \Psr\Http\Message\ResponseInterface as Response;
 
 
 
+/* 
+	Create the Slim application 
 
-
-
-/* Create the Slim application */
+*/
 $app = new \Slim\App([
 	'debug' => _SETTINGS['slim']['debug'],
 	'settings' => [
@@ -145,12 +139,7 @@ function someFunction(){
 //};
 
 
-
-
 require_once(_SETTINGS['paths']['root']."/vendor/botnyx/sfe-shared-core/src/includes/middleware.php");
-
-
-
 
 
 require_once(_SETTINGS['paths']['root']."/vendor/botnyx/sfe-shared-core/src/includes/routes.php");
