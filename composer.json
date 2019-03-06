@@ -22,22 +22,9 @@
             "Botnyx\\Sfe-backend-base\\": "src/"
         }
     },
-
     "extra": {
         "branch-alias": {
             "dev-master": "0.1-dev"
         }
-
-    },
-
-    "repositories": [
-        {
-            "type": "vcs",
-            "url": "https://github.com/botnyx/sfe-backend-base"
-        },
-        {
-            "type": "vcs",
-            "url": "https://github.com/botnyx/sfe-shared-core"
-        }
-    ]
+    }
 }
