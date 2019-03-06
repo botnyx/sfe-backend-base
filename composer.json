@@ -12,8 +12,8 @@
     "type": "library",
     "require": {
 		    "php": ">=7.1",
-        "botnyx/sfe-shared-core": ">=0.1",
-	"botnyx/sfe-backend-core": ">=0.1"
+        "botnyx/sfe-shared-core": "dev-master as 0.1",
+	       "botnyx/sfe-backend-core": ">=0.1"
     },
     "require-dev": {
 		    "phpunit/phpunit": "6.*"
@@ -23,11 +23,11 @@
             "Botnyx\\Sfe-backend-base\\": "src/"
         }
     },
-    
+
     "extra": {
         "branch-alias": {
             "dev-master": "0.1-dev"
         }
-    	
+
     }
 }
