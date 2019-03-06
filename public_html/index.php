@@ -9,10 +9,9 @@
 		my-testsite-com.conf.ini
 
 */
-$_conf = str_replace('www-','',str_replace('.','-',$_SERVER['HTTP_HOST']).".conf.ini");
 
-if( file_exists( "../".$_conf ) ){
-	define( '_SETTINGS',  parse_ini_file( "../".$_conf , true)) ;
+if( !file_exists( "../configuration.ini" ) ){
+	die("check configuration.ini");
 }else{
 	define( '_SETTINGS',  parse_ini_file("../configuration.ini", true)) ;
 }
