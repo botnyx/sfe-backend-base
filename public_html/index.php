@@ -57,33 +57,12 @@ use Kevinrob\GuzzleCache\Strategy\GreedyCacheStrategy;
 	Include the shared core, which adds the deps, middleware and routes to the app.
 	
 */
-//require_once(_SETTINGS['paths']['root']."/vendor/botnyx/sfe-shared-core/src/includes/dependencies.php");
+require_once(_SETTINGS['paths']['root']."/vendor/botnyx/sfe-shared-core/src/includes/dependencies.php");
 
 
 
 #use \Psr\Http\Message\ServerRequestInterface as Request;
 #use \Psr\Http\Message\ResponseInterface as Response;
-
-
-/* Load backend related stuff */
-if(array_key_exists('sfeBackend',_SETTINGS) &&  file_exists(_SETTINGS['paths']['root'] .'/src/backend_dependencies.php')){
-	error_log('/src/backend_dependencies.php');
-	require_once(_SETTINGS['paths']['root'] .'/src/backend_dependencies.php');
-}
-
-
-
-/* Load oAuth related stuff */
-if(array_key_exists('sfeAuth',_SETTINGS) && file_exists(_SETTINGS['paths']['root'] .'/src/oauth_dependencies.php')){
-	error_log('/src/oauth_dependencies.php');
-	require_once(_SETTINGS['paths']['root'] .'/src/oauth_dependencies.php');
-}
-
-/* Load backend related stuff */
-if(array_key_exists('sfeCdn',_SETTINGS) &&  file_exists(_SETTINGS['paths']['root'] .'/src/cdn_dependencies.php')){
-	error_log('/src/cdn_dependencies.php');
-	require_once(_SETTINGS['paths']['root'] .'/src/cdn_dependencies.php');
-}
 
 
 
@@ -168,51 +147,14 @@ function someFunction(){
 
 
 
-/* Load oAuth related stuff */
-
-if(array_key_exists('sfeAuth',_SETTINGS) && file_exists(_SETTINGS['paths']['root'] .'/src/oauth_middleware.php')){
-	error_log('/src/oauth_middleware.php');
-	require_once(_SETTINGS['paths']['root'] .'/src/oauth_middleware.php');
-}
-/* Load backend related stuff */
-if(array_key_exists('sfeBackend',_SETTINGS) && file_exists(_SETTINGS['paths']['root'] .'/src/backend_middleware.php')){
-	error_log('/src/backend_middleware.php');
-	require_once(_SETTINGS['paths']['root'] .'/src/backend_middleware.php');
-}
-/* Load cdn related stuff */
-if(array_key_exists('sfeCdn',_SETTINGS) && file_exists(_SETTINGS['paths']['root'] .'/src/cdn_middleware.php')){
-	error_log('/src/cdn_middleware.php');
-	require_once(_SETTINGS['paths']['root'] .'/src/cdn_middleware.php');
-}
+require_once(_SETTINGS['paths']['root']."/vendor/botnyx/sfe-shared-core/src/includes/middleware.php");
 
 
 
 
 
-/* Load oAuth related stuff */
-if(array_key_exists('sfeAuth',_SETTINGS) && file_exists(_SETTINGS['paths']['root'] .'/src/oauth_routes.php') ){
-	error_log('/src/oauth_routes.php');
-	require_once(_SETTINGS['paths']['root'] .'/src/oauth_routes.php');
-}
-/* Load backend related stuff */
-if(array_key_exists('sfeBackend',_SETTINGS) && file_exists(_SETTINGS['paths']['root'] .'/src/backend_routes.php')){
-	error_log('/src/backend_routes.php');
-	require_once(_SETTINGS['paths']['root'] .'/src/backend_routes.php');
-}
+require_once(_SETTINGS['paths']['root']."/vendor/botnyx/sfe-shared-core/src/includes/routes.php");
 
-/* Load Cdn related stuff */
-if(array_key_exists('sfeCdn',_SETTINGS) && file_exists(_SETTINGS['paths']['root'] .'/src/cdn_routes.php')){
-	error_log('/src/cdn_routes.php');
-	require_once(_SETTINGS['paths']['root'] .'/src/cdn_routes.php');
-}
-
-
-
-/* Load Cdn related stuff */
-if(array_key_exists('sfeFrontend',_SETTINGS) && file_exists(_SETTINGS['paths']['root'] .'/src/frontend_routes.php')){
-	error_log('/src/frontend_routes.php');
-	require_once(_SETTINGS['paths']['root'] .'/src/frontend_routes.php');
-}
 
 
 
