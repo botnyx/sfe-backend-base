@@ -6,7 +6,15 @@ Sfe Backend server
 
 Create a folder where the project should reside.
 
+```
 git clone https://github.com/botnyx/sfe-backend-base.git ./
+```
 
+
+```
 composer install
+```
+
+
+
 
