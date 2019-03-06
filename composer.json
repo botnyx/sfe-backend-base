@@ -23,8 +23,8 @@
             "Botnyx\\Sfe-backend-base\\": "src/"
         }
     },
-    {
-	"extra": {
+    
+    "extra": {
         "branch-alias": {
             "dev-master": "0.1"
         }
