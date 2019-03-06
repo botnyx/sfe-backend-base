@@ -12,8 +12,7 @@
     "type": "library",
     "require": {
 		    "php": ">=7.1",
-        "botnyx/sfe-shared-core": "1.0.x-dev",
-	"botnyx/sfe-backend-core": "1.0.x-dev"
+        "botnyx/sfe-shared-core": "1.0.x-dev"
     },
     "require-dev": {
 		    "phpunit/phpunit": "6.*"
