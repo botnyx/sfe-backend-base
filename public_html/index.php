@@ -1,4 +1,5 @@
 <?php 
+
 /* 
 	Load the Configuration 
 */
@@ -149,8 +150,8 @@ require_once(_SETTINGS['paths']['root']."/vendor/botnyx/sfe-shared-core/src/incl
 
 
 
-
-
+var_dump( class_exists("Botnyx\\Sfe\\Shared\\Core\\Application"));
+die();
 
 
 
