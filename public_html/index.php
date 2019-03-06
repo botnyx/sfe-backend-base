@@ -150,7 +150,7 @@ require_once(_SETTINGS['paths']['root']."/vendor/botnyx/sfe-shared-core/src/incl
 
 
 
-var_dump( class_exists("Botnyx\\Sfe\\Shared\\Core\\Application"));
+var_dump( class_exists("Botnyx\\Sfe\\Shared\\Application"));
 die();
 
 
