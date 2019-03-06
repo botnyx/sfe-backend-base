@@ -19,7 +19,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Botnyx\\Sfe-backend-base\\": "src/"
+            "Botnyx\\Sfe\\Backend\\Base\\": "src/"
         }
     }
 }
