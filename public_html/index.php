@@ -7,6 +7,7 @@ if( !file_exists( "../configuration.ini" ) ){ die("check configuration.ini"); }e
 
 /* Composer autoloader */
 require _SETTINGS['paths']['root'] .'/vendor/autoload.php';
+
 /* Include the shared core, which adds the deps, middleware and routes to the app. */
 require_once(_SETTINGS['paths']['root']."/vendor/botnyx/sfe-shared-core/src/includes/dependencies.php");
 
