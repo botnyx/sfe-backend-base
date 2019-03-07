@@ -27,9 +27,6 @@ $app = $sfe->start();
 /* Setup the container  */
 $container = $app->getContainer();
 
-var_dump( class_exists("Botnyx\\Sfe\\Shared\\Application"));
-die();
-
 
 
 
@@ -61,11 +58,16 @@ die();
 
 
 
+/* Include the middleware. */
+require_once(_SETTINGS['paths']['root']."/vendor/botnyx/sfe-shared-core/src/includes/container.php");
 
 /* Include the middleware. */
 require_once(_SETTINGS['paths']['root']."/vendor/botnyx/sfe-shared-core/src/includes/middleware.php");
 /* Include the routes. */
 require_once(_SETTINGS['paths']['root']."/vendor/botnyx/sfe-shared-core/src/includes/routes.php");
+
+var_dump( class_exists("Botnyx\\Sfe\\Shared\\Application"));
+die();
 
 
 
