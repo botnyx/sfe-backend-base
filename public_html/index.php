@@ -1,5 +1,4 @@
 <?php
-
 /* Load the Configuration */
 if( !file_exists( "../configuration.ini" ) ){ die("check configuration.ini"); }else{
 	define( '_SETTINGS',  parse_ini_file("../configuration.ini", true)) ;
