@@ -63,21 +63,9 @@ require_once(_SETTINGS['paths']['root']."/vendor/botnyx/sfe-shared-core/src/incl
 
 /* Include the middleware. */
 require_once(_SETTINGS['paths']['root']."/vendor/botnyx/sfe-shared-core/src/includes/middleware.php");
+
 /* Include the routes. */
 require_once(_SETTINGS['paths']['root']."/vendor/botnyx/sfe-shared-core/src/includes/routes.php");
-
-var_dump( class_exists("Botnyx\\Sfe\\Shared\\Application"));
-die();
-
-
-
-if(!array_key_exists('sfeFrontend',_SETTINGS)){
-	$app->get('/robots.txt',  function ( $request,  $response, array $args){
-		$res = "User-agent: *".PHP_EOL."Disallow: /";
-		return $response->write($res);
-		
-	});		
-}
 
 
 
