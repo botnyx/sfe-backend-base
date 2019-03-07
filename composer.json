@@ -9,7 +9,7 @@
             "email": "hopper.jerry@gmail.com"
         }
     ],
-    "type": "library",
+    "type": "package",
     "require": {
 		    "php": ">=7.1",
         "botnyx/sfe-shared-core": "dev-master as 0.1",
