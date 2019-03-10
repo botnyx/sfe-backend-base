@@ -24,7 +24,7 @@
         }
     },
     "scripts": {
-        "post-install-cmd": [
+        "post-create-project-cmd": [
             "Botnyx\\Sfe\\Backend\\Core\\Setup::postInstall"
         ]
     }
