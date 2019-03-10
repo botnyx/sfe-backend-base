@@ -13,7 +13,7 @@
     "require": {
 		    "php": ">=7.1",
         "botnyx/sfe-shared-core": "dev-master as 0.1",
-		"botnyx/sfe-backend-core": "dev-master as 0.1"
+		    "botnyx/sfe-backend-core": "dev-master as 0.1"
     },
     "require-dev": {
 		    "phpunit/phpunit": "6.*"
@@ -22,5 +22,10 @@
         "psr-4": {
             "Botnyx\\Sfe\\Backend\\Base\\": "src/"
         }
+    },
+    "scripts": {
+        "post-install-cmd": [
+            "Botnyx\\Sfe\\Backend\\Core\\Setup::postInstall"
+        ]
     }
 }
