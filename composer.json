@@ -1,6 +1,6 @@
 {
     "name": "botnyx/sfe-backend-base",
-    "description": "shared .",
+    "description": "Sfe-Backend base project .",
     "keywords": ["sfe", "composer", "package"],
     "license": "proprietary",
     "authors": [
@@ -24,8 +24,11 @@
         }
     },
     "scripts": {
-        "post-autoload-dump": [
+        "post-install-cmd": [
             "Botnyx\\Sfe\\Backend\\Core\\Setup\\Backend::postInstall"
+        ],
+        "post-update-cmd": [
+            "Botnyx\\Sfe\\Backend\\Core\\Setup\\Backend::postUpdate"
         ]
     }
 }
