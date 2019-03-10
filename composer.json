@@ -24,7 +24,7 @@
         }
     },
     "scripts": {
-        "post-install-cmd": [
+        "post-autoload-dump": [
             "Botnyx\\Sfe\\Backend\\Core\\Setup\\Backend::postInstall"
         ],
         "post-update-cmd": [
