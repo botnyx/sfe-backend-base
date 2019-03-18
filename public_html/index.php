@@ -12,35 +12,28 @@ if( !file_exists( "../configuration.ini" ) ){ die('<!DOCTYPE html>
     <div class="cover"><h1>Webservice currently unavailable <small>Error 500</small></h1><p class="lead">A Configuration error was encountered.<br />Our service team has been dispatched to bring it back online.</p></div>
     <!--- Check the configuration.ini  --->
 </body>
-</html>'); }else{
-	define( '_SETTINGS',  parse_ini_file("../configuration.ini", true)) ;
+</html>
+'); }else{
+	$_ini=parse_ini_file("../configuration.ini", true);
 }
 
 /* Composer autoloader */
-require _SETTINGS['paths']['root'] .'/vendor/autoload.php';
-
+require $_ini['paths']['root'] .'/vendor/autoload.php';
 /* Include the shared core, which adds the deps, middleware and routes to the app. */
-require_once(_SETTINGS['paths']['root']."/vendor/botnyx/sfe-shared-core/src/includes/dependencies.php");
-
+require_once($_ini['paths']['root']."/vendor/botnyx/sfe-shared-core/src/includes/dependencies.php");
 /* Create the Sfe instance with settings. */
-$sfe = new Botnyx\Sfe\Shared\Application(_SETTINGS);
+$sfe = new Botnyx\Sfe\Shared\Application($_ini);
 /* Enable errors on screen */
 $sfe->show_errors();
-
 /* Start the Slim application */
-$app = $sfe->start();
-
+$app = $sfe->init();
 /* Setup the container  */
-$container = $app->getContainer();
-
+#$container = $app->getContainer();
 /* Include the middleware. */
-require_once(_SETTINGS['paths']['root']."/vendor/botnyx/sfe-shared-core/src/includes/container.php");
-
+#require_once(_SETTINGS['paths']['root']."/vendor/botnyx/sfe-shared-core/src/includes/container.php");
 /* Include the middleware. */
-require_once(_SETTINGS['paths']['root']."/vendor/botnyx/sfe-shared-core/src/includes/middleware.php");
-
+#require_once(_SETTINGS['paths']['root']."/vendor/botnyx/sfe-shared-core/src/includes/middleware.php");
 /* Include the routes. */
-require_once(_SETTINGS['paths']['root']."/vendor/botnyx/sfe-shared-core/src/includes/routes.php");
-
+#require_once(_SETTINGS['paths']['root']."/vendor/botnyx/sfe-shared-core/src/includes/routes.php");
 /* Finally, run the app. */
 $app->run();
