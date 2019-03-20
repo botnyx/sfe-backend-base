@@ -15,7 +15,7 @@
         "botnyx/sfe-shared-core": "dev-master as 0.1",
 		    "botnyx/sfe-backend-core": "dev-master as 0.1",
         "botnyx/sfe-backend-js": "dev-master as 0.1",
-        "botnyx/sfe-frontend-core": "dev-master as 0.1",
+        "botnyx/sfe-frontend-core": "dev-master as 0.1"
 
     },
     "require-dev": {
