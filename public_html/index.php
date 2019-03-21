@@ -1,6 +1,19 @@
 <?php
 /* Load the Configuration */
-if( !file_exists( "../configuration.ini" ) ){ header("HTTP/1.0 424 Missing configuration",true,424);
+
+try{
+	if( !file_exists( "../configuration.ini" ) ){ 
+		throw new \Exception('HTTP/1.0 424 Missing configuration'); 
+	}else{
+		if (( $_ini=@parse_ini_file("../configuration.ini", true) ) == false){
+			throw new Exception('Error parsing configuration file.');	
+		}
+		if(!file_exists($_ini['paths']['root'] .'/vendor/autoload.php')){
+			throw new Exception('Cant autoload composer. ('.$_ini['paths']['root'] .'/vendor/autoload.php)');	
+		}
+	}
+}catch(Exception $e){
+	header("HTTP/1.0 424 Missing configuration",true,424);
 	die('<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,12 +24,11 @@ if( !file_exists( "../configuration.ini" ) ){ header("HTTP/1.0 424 Missing confi
 </head>
 <body>
     <div class="cover"><h1>Webservice currently unavailable <small>Error 424</small></h1><p class="lead">A Configuration error was encountered.<br /></p></div>
-    <!--- Check the configuration.ini  --->
-	<footer>HTTP/1.0 424 Missing configuration.</footer>
+    <!--- '.$e->getMessage().'  --->
+	<footer>'.$e->getMessage().'</footer>
 </body>
 </html>
-'); }else{
-	$_ini=parse_ini_file("../configuration.ini", true);
+');
 }
 
 
